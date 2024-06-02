@@ -1,10 +1,23 @@
 import Item from "./Item"
+import { useState } from 'react'
 
 // OBS, det är tillåtet att lägga till flera props
 // När du testar, rendera komponenten med olika värden på props
-const Day = ({ day }) => {
+const Day = ({ day, dayName }) => {
 	// TODO: implement rest of week
-	const dayName = 'Måndag'
+	const [items, setItems] = useState(day)
+	
+	const addNewItem = () => {
+		const newItem = {
+			id: Math.random(),
+			text: 'Ny uppgift',
+			done: false,
+			late: false
+		}
+		setItems([...items, newItem])
+		
+	}
+	// const dayName = 'Måndag'
 
 	return (
 		<div className="day">
@@ -15,7 +28,7 @@ const Day = ({ day }) => {
 			))}
 
 			<div className="controls">
-				<button> Ny uppgift </button>
+				<button onClick={addNewItem} > Ny uppgift </button>
 			</div>
 		</div>
 	)
