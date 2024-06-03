@@ -6,10 +6,10 @@ import { useState } from 'react'
 const Day = ({ day, dayName }) => {
 	// TODO: implement rest of week
 	const [items, setItems] = useState(day)
-	
+
 	const addNewItem = () => {
 		const newItem = {
-			id: Math.random(),
+			id: items.length + 1,
 			text: 'Ny uppgift',
 			done: false,
 			late: false
