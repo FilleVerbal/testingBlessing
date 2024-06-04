@@ -7,16 +7,22 @@ import { useStore } from '../../data/store.js'
 const Day = ({ day, todosByDay }) => {
 	// TODO: implement rest of week
 	const [items, setItems] = useState(day)
-	const setTodos = useStore(state => state.setTodos)
+	const addTodo = useStore(state => state.addTodo)
 	const addNewItem = () => {
+		const newText = prompt('Ange info för uppgiften', '')
 		const newItem = {
 			id: items.length + 1,
-			day: '',
-			text: 'Ny uppgift',
+			day: day,
+			text: newText,
 			done: false,
 			late: false
 		}
-		setItems([...items, newItem])		
+		if (newText != null) {
+			addTodo(newItem)
+		} else {
+			return;
+		} 
+		// setItems([...items, newItem])
 	}
 
 	return (

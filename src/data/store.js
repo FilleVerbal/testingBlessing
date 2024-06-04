@@ -36,8 +36,8 @@ const useStore = create(set => ({
 
 	// TODO: lägg till en funktion "setTodos" så att du kan ändra innehållet i store från dina testfiler
 	setTodos: (newTodos) => set({ todos: newTodos }),
-	addTodo: (text) => set(state => ({
-		todos: [...state.todos, { id: state.todos.length + 1, text, done: false}]
+	addTodo: (newItem) => set(state => ({
+		todos: [...state.todos, { id: state.todos.length + 1, day: newItem.day, text: newItem.text, done: false}]
 	})),
 	removeTodo: (id) => set(state => ({
 		todos: state.todos.filter(t => t.id !== id)
