@@ -1,20 +1,25 @@
 import { useStore } from '../data/store.js'
 import Day from "./day/Day"
 import PrioList from "./prio-list/PrioList.jsx"
-import { splitTodosIntoDays } from '../utils/list.js'
+// import { splitTodosIntoDays } from '../utils/list.js'
 
 const Main = () => {
 	const todos = useStore(state => state.todos)
-	const days = splitTodosIntoDays(todos)
+	// const days = splitTodosIntoDays(todos)
 	const dayNames = [
 		'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'
-	 ]
+	]
+	const todosByDay = {}
+	dayNames.forEach((weekday) => {
+		todosByDay[weekday] = todos.filter((day) => day.day === weekday);
+	  });
+	console.log(todosByDay);
 
 	return (
 		<main>
 			<div className="day-view">
-				{days.map(day => (
-					<Day day={day} key={day.id /* TODO kom på något sätt att ge varje dag en unik "key" */} />
+				{dayNames.map((day) => (
+					<Day key={day} todosByDay={todosByDay} day={day}/>
 				))}
 			</div>
 
