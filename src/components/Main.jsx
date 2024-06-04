@@ -6,6 +6,9 @@ import { splitTodosIntoDays } from '../utils/list.js'
 const Main = () => {
 	const todos = useStore(state => state.todos)
 	const days = splitTodosIntoDays(todos)
+	const dayNames = [
+		'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'
+	 ]
 
 	return (
 		<main>

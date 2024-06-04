@@ -1,7 +1,6 @@
 
 const PrioItem = ({ item, num }) => {
-	let itemClass = 'item'
-	if( item.late ) itemClass += ' due'
+	let itemClass = `item ${item.late ? 'due' : ''}`
 
 	return (
 		<div className={itemClass}>
