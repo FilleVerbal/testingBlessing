@@ -33,6 +33,8 @@ const useStore = create(set => ({
 	}),
 
 	resetTodos: () => set(state => ({ todos: [] })),
+	restartWeeklyTodoos: () => set(state => ({ todos: state.todos.map((t) => ({...t, done: false})) 
+	})),
 
 	// TODO: lägg till en funktion "setTodos" så att du kan ändra innehållet i store från dina testfiler
 	setTodos: (newTodos) => set({ todos: newTodos }),

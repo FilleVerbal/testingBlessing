@@ -25,7 +25,7 @@ const Main = () => {
 
 			<hr />
 
-			<PrioList />
+			<PrioList className="prio-list" />
 
 		</main>
 	)

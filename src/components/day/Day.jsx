@@ -22,7 +22,6 @@ const Day = ({ day, todosByDay }) => {
 		} else {
 			return;
 		} 
-		// setItems([...items, newItem])
 	}
 
 	return (
