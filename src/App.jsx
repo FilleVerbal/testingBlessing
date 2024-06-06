@@ -7,9 +7,9 @@ const App = () => {
 
 	return (
 		<div className="column">
-		<Header />
-		<Main />
-		<Footer />
+			<Header />
+			<Main />
+			<Footer />
 		</div>
 	)
 }
