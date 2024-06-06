@@ -1,7 +1,7 @@
 {
   "name": "study-planner",
   "private": true,
-  "homepage": "https://filleverbal.github.io/testingBlessing"
+  "homepage": "https://filleverbal.github.io/testingBlessing",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
