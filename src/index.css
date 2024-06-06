@@ -49,6 +49,14 @@ button:active { background-color: #2E9AFE; }
 .controls {
 	margin-top: 0.5em;
 }
+.change, 
+.delete {
+	background-color: var(--c1);
+}
+.change:hover,
+.delete:hover {
+	cursor: pointer;
+}
 
 header {
 	text-align: center;
